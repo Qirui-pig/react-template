@@ -1,0 +1,5 @@
+const CHANAGE_USER_INFO = 'CHANAGE_USER_INFO'
+
+export {
+  CHANAGE_USER_INFO
+}
