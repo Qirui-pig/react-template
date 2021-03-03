@@ -1,9 +1,8 @@
 import { combineReducers } from 'redux-immutable'
 
-import { reducer as userReducer } from '../pages/home/store'
+import { reducer as userReducer } from '../pages/login/store'
 
 const cReducer = combineReducers({
-  // 试例
   user: userReducer,
 })
 

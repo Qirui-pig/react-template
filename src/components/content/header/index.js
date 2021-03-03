@@ -7,10 +7,14 @@ import { AppHeaderWrapper } from './style'
 import logoSvg from '@/assets/svg/logo.svg'
 
 
-export default memo(function AppHeader () {
+export default memo(function AppHeader (props) {
+  const { login } = props
+
   const [currentIndex, setCurrentIndex] = useState(0)
 
-  const options = [{ title: '简介' }, { title: '业务' }, { title: '员工' }, { title: '企业责任' }, { title: '媒体' }]
+  const options = [
+  // { title: '简介' }, { title: '业务' }, { title: '员工' }, { title: '企业责任' }, { title: '媒体' }
+  ]
 
   const menu = (
     <Menu>
@@ -38,21 +42,24 @@ export default memo(function AppHeader () {
               <Col className="title" span={14}>Title</Col>
             </Row>
           </Col>
-          <Col className="h-right" offset={2} span={18}>
+          <Col className="h-right" offset={2} span={17}>
             <ul className="tab-bar">
               {
-                options.map((item, index) => {
+                options.length > 0 ? options.map((item, index) => {
                   return (
-                    <Dropdown overlay={menu} overlayClassName="drop" placement="bottomCenter" trigger={['hover']} arrow>
-                      <li onClick={e => setCurrentIndex(index)} className={['tab-item ', index === currentIndex ? 'active' : ''].join('')} key={item.title}>
+                    <Dropdown overlay={menu} overlayClassName="drop" placement="bottomCenter" trigger={['hover']} arrow key={item.title}>
+                      <li onClick={e => setCurrentIndex(index)} className={['tab-item ', index === currentIndex ? 'active' : ''].join('')} >
                         <div>{item.title}</div>
                         <i className="line" />
                       </li>
                     </Dropdown>
                   )
-                })
+                }) : ''
               }
             </ul>
+          </Col>
+          <Col span={1}>
+            <div className="back" onClick={e=>{login(false)}}>返回</div>
           </Col>
         </Row>
       </div>

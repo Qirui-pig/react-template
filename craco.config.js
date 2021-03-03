@@ -19,7 +19,6 @@ module.exports = {
       }
     }
   ],
-
   webpack:{
     alias:{
       "@":resolve("src"),
