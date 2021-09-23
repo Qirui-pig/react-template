@@ -9,6 +9,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
+    "browserslist": "^4.17.0",
     "immutable": "^4.0.0-rc.12",
     "keen-slider": "^5.4.0",
     "less": "^4.1.1",
